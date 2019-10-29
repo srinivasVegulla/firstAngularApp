@@ -1,0 +1,15 @@
+.groupForm {
+
+    text-align : center;
+    font-size : 20px;
+   margin : 10px;
+}
+.groupsubmit {
+
+    border-radius : 100px;
+    height:40px;
+    width:100px;
+}
+.alert-danger{
+    color:red;
+}

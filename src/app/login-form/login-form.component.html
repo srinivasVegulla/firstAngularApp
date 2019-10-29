@@ -1,0 +1,31 @@
+<form [formGroup]="angForm" >
+<div class = "groupForm" >
+    Username : <input type = "text" name ="username" placeholder ="username" class="form-control" formControlName="Username" #Username>
+</div>
+<div *ngIf="angForm.controls['Username'].invalid && (angForm.controls['Username'].dirty || angForm.controls['Username'].touched)" class="alert alert-danger groupForm" >
+    <div *ngIf="angForm.controls['Username'].errors.required">
+      user name is required.
+    </div>
+    <div *ngIf="angForm.controls['Username'].errors.minlength">
+        min characters {{minLength}} is required.
+      </div>
+      <div *ngIf="angForm.controls['Username'].errors.maxlength">
+        max characters 6 is required.
+      </div>
+</div>
+<div class = "groupForm"  >
+    Password : <input type = "password" name ="password" placeholder ="password" class="form-control" formControlName="Password" #Password>
+</div>
+<div class="alert-danger groupForm">
+    {{error}}
+</div>
+<div *ngIf="angForm.controls['Password'].invalid && (angForm.controls['Password'].dirty || angForm.controls['Password'].touched)" class="alert alert-danger groupForm">
+    <div *ngIf="angForm.controls['Password'].errors.required">
+         password is required.
+    </div>
+</div>
+<div class = "groupForm">
+    <button (click) = "submitLoginForm(Username.value, Password.value)" type="submit" class="groupsubmit"
+    [disabled]="angForm.pristine || angForm.invalid">SUBMIT</button>
+</div>
+</form>

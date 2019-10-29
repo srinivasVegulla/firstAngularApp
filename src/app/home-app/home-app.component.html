@@ -1,0 +1,13 @@
+<div class="homeHeader">
+    <div class="groupTitle">
+        {{title}}
+    </div>
+    <ul class="systemBarUL">
+        <li class="userName">Welcome {{userName}}</li>
+        <li> {{currentTime | date : 'dd-MMM-yyyy'}}</li>
+        <li class="logOut" (click)="logout()">Logout</li>
+    </ul>  
+</div>
+
+
+
